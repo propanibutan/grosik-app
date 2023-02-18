@@ -85,6 +85,8 @@
 
 We are three colleagues from CodersLab's bootcamp who make some difference and set up our project. We try to use the best and already known in our practices. If you have some questions don't hesitate to ask us! We are open to all suggestions!
 We are self-organization because we know we need experience for our future job as developers.
+
+It is an application where everyone can create their shopping list and compare it with prices in different stores. Thanks to this, the user can find the best offers for himself.
 <p align="center"><b>Check out our project!</b></p>
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
