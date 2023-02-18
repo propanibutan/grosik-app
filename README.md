@@ -83,7 +83,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-We are three colleagues from CodersLab bootcamp who make some difference and set up our project. We try to use the best and already known in our practices. If you have some questions don't hesitate to ask us! We are open to all suggestions!
+We are three colleagues from CodersLab's bootcamp who make some difference and set up our project. We try to use the best and already known in our practices. If you have some questions don't hesitate to ask us! We are open to all suggestions!
 We are self-organization because we know we need experience for our future job as developers.
 <p align="center"><b>Check out our project!</b></p>
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
