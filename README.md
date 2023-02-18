@@ -43,7 +43,7 @@
     <br />
     <br />
     <!-- <a href="https://github.com/github_username/repo_name">View Demo</a> -->
-    ·
+    <!-- · -->
     <a href="https://github.com/propanibutan/grosik-app/issues">Report Bug</a>
     ·
     <a href="https://github.com/propanibutan/grosik-app/issues">Request Feature</a>
