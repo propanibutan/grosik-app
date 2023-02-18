@@ -151,7 +151,7 @@ This is an example of how to list things you need to use the software and how to
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Basic configuration
+- [X] Basic configuration
 - [ ] Database
 - [ ] Landing page
 - [ ] Authentication
