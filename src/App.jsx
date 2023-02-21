@@ -1,24 +1,19 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Register from './pages/Register/Register';
 
 function App() {
 
-
-  return (
-    <Router> 
+  return (  
+    <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/logowanie' element={<Login />} />
-        <Route path='/rejestracja' element={<Register />} />
-        <Route path='/wylogowano' element={<Logout />} />
-        <Route path='/aplikacja' element={<Application />} />
+        {/* <Route path='/' element={<Home />} /> */}
+        {/* <Route path='logowanie' element={<Login />} /> */}
+        <Route path='register' element={<Register />} />
+        {/* <Route path='wylogowano' element={<Logout />} /> */}
+        {/* <Route path='aplikacja' element={<Application />} /> */}
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 
-export default App
+export default App;
