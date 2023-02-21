@@ -154,7 +154,7 @@ This is an example of how to list things you need to use the software and how to
 ## Roadmap
 
 - [X] Basic configuration
-- [ ] Database
+- [X] Database
 - [ ] Landing page
 - [ ] Authentication
     - [ ] Login
