@@ -84,7 +84,7 @@
 ## About The Project
 
 We are three colleagues from CodersLab's bootcamp who make some difference and set up our project. We try to use the best and already known in our practices. If you have some questions don't hesitate to ask us! We are open to all suggestions!
-We are self-organization because we know we need experience for our future job as developers.
+We are self-organization because we know we need experience for our future job as developers. During the project, we try to work in agile. Our "helpers" in this are [![Trello][Trello]][Trello-url] and [![Discord][Discord]][Discord-url].
 
 This is an application where everyone can create their shopping list and compare it with prices in different stores. Thanks to this, the user can find the best offers for himself.
 <p align="center"><b>Check out our project!</b></p>
@@ -201,7 +201,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-- Paweł Pitura - [Linkedin](https://www.linkedin.com/in/pawe%C5%82-pitura-5b83801b6/) - email@email_client.com
+- Paweł Pitura - [Linkedin](https://www.linkedin.com/in/pawe%C5%82-pitura-5b83801b6/) - pa.pitura@gmail.com
 - Karolina Starowicz - [Linkedin](https://www.linkedin.com/in/karolina-starowicz-3694bb217/) - kastarowicz@gmail.com
 - Patrycja Zalas - [Linkedin](https://www.linkedin.com/in/patrycja-zalas/) - zalas.patrycja@gmail.com
 
@@ -235,3 +235,7 @@ Project Link: [https://github.com/propanibutan/grosik-app](https://github.com/pr
 [Vite-url]: https://vitejs.dev/
 [i18next]: https://img.shields.io/badge/i18next-01978A?style=for-the-badge&logo=i18next&logoColor=FFFFFF
 [i18next-url]: https://www.i18next.com/
+[Trello]: https://img.shields.io/badge/trello-026AA7?style=for-the-badge&logo=trello&logoColor=FFFFFF
+[Trello-url]: https://www.trello.com/
+[Discord]: https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=FFFFFF
+[Discord-url]: https://discord.com/
