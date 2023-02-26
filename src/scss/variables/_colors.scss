@@ -13,3 +13,15 @@ $text: #393E45;
 $secondary-text: #BABABA;
 //karty opinii
 $secondary-background: #F5F5F5;
+//główne kolory gradientu z landing-page
+$top-purple: rgba(87,69,168,1);
+$bot-orange: rgba(238,92,72,1);
+
+//mixin z gradientem żeby było prościej (używa się z @include main-gradient(); )
+@mixin main-gradient() {
+    background: linear-gradient(135deg, $top-purple 0%, $bot-orange 100%);
+}
+
+@mixin bot-gradient() {
+    background: linear-gradient(180deg, rgba(247,167,111,1) 62%, rgba(255,239,99,1) 100%);
+}
