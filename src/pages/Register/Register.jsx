@@ -1,50 +1,36 @@
 import { useState } from "react";
 import { auth } from "../../data/firebase_config";
-import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import GradientButton from "../../components/common/GradientButton";
+import UniversalInput from "../../components/common/UniversalInput/UniversalInput";
 
 import s from "./Register.module.scss";
-import DataTable from "../../components/DataTable/DataTable";
 
 const Register = () => {
 
+   const [userName, setUserName] = useState('');
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
+   const [confirmPassword, setConfirmPassword] = useState('');
 
    const SignIn = async (e) => {
-      // e.preventDefault();
+      e.preventDefault();
       await createUserWithEmailAndPassword(auth, email, password);
-   }
-   const SignOut = async (e) => {
-      try {
-         await signOut(auth);
-         sessionStorage.clear();
-      } catch(err) {
-         console.log(err);
-      }
    }
 
    const SetSessionStorageUser = auth?.currentUser?.email !== undefined && 
       sessionStorage.setItem("Login", `${auth.currentUser.email}`);
-      
-   console.log(auth?.currentUser?.email)
 
    return (
-      <section>
-         <form action="submit">
-            <input type="text" placeholder="Wpisz email" 
-               onChange={(e) => setEmail(e.target.value)}
-            />
-            <input type="text" placeholder="Wpisz hasło" 
-               onChange={(e) => setPassword(e.target.value)}
-            />
-            <input type="button" value="Zarejestruj się" 
-               onClick={(e) => SignIn()}
-            />
-            <input type="button" value="Wyloguj się" 
-               onClick={(e) => SignOut()}
-            />
+      <section className={s.register}>
+         <form action="submit" className={s.register__form}>
+            <UniversalInput name="name" type="text" label="Nazwa użytkownika" callback={setUserName} value={userName}/>
+            <UniversalInput name="e-mail" type="email" label="E-mail" callback={setEmail} value={email}/>
+            <UniversalInput name="password" type="password" label="Hasło" callback={setPassword} value={password}/>
+            <UniversalInput name="confirm-password" type="password" label="Powtórz hasło" callback={setConfirmPassword} value={confirmPassword}/>
+
+            <GradientButton text="Załóż konto" execute={(e) => `${console.log('test')} ${e.preventDefault()}`}/>
          </form>
-         <DataTable />
       </section>
    );
 }

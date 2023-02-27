@@ -1,0 +1,17 @@
+@import "/src/scss/main.scss";
+
+.gradientButton{
+   background: linear-gradient(135deg, $top-purple 5%, $bot-orange 50%, $top-purple 95%);
+   color: $white-text;
+   padding: 16px 0;
+   font-size: 28px;
+   width: 400px;
+   cursor: pointer;
+   border-radius: 100px;
+   transition: 500ms;
+   background-size: 800px;
+   background-position: 0%;
+   &:hover{
+      background-position: 100%;
+   }
+}

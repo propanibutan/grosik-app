@@ -1,6 +1,22 @@
 @import "/src/scss/main.scss";
 
-*{
+.register{
    font-family: $main-font;
    color: $main;
+   background-color: black;
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.register__form{
+   background-color: $primary-background;
+   width: 500px;
+   padding: 40px;
+   border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   gap: 30px;
 }
