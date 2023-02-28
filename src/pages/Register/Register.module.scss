@@ -6,17 +6,53 @@
    background-color: black;
    min-height: 100vh;
    display: flex;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
 }
-.register__form{
+.register__title{
+   margin-bottom: 150px;
+   color: $white-text;
+   font-family: $font-text;
+   font-size: 66px;
+   line-height: 92px;
+   font-weight: bold;
+   letter-spacing: 5px;
+}
+.register__box{
    background-color: $primary-background;
-   width: 500px;
+   min-width: 500px;
    padding: 40px;
    border-radius: 20px;
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
    align-items: center;
-   gap: 30px;
+   box-shadow: 0 0 50px 4px #797979;
+   font-family: $font-text;
+}
+.register__form{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   gap: 40px;
+}
+.register__box_h3{
+   font-size: 24px;
+   line-height: 34px;
+   color: $text;
+   margin-top: 16px;
+}
+.register__box_link{
+   color: $primary-orange;
+}
+.register__box_bottomText{
+   font-size: 20px;
+   color: $text;
+   margin-top: 65px;
+   a{
+      color: $primary-orange;
+   }
 }

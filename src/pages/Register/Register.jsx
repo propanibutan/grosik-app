@@ -23,14 +23,21 @@ const Register = () => {
 
    return (
       <section className={s.register}>
-         <form action="submit" className={s.register__form}>
-            <UniversalInput name="name" type="text" label="Nazwa użytkownika" callback={setUserName} value={userName}/>
-            <UniversalInput name="e-mail" type="email" label="E-mail" callback={setEmail} value={email}/>
-            <UniversalInput name="password" type="password" label="Hasło" callback={setPassword} value={password}/>
-            <UniversalInput name="confirm-password" type="password" label="Powtórz hasło" callback={setConfirmPassword} value={confirmPassword}/>
+         <h1 className={s.register__title}>Załóż konto</h1>
+         <div className={s.register__box}>
+            <form action="submit" className={s.register__form}>
+               <UniversalInput name="name" type="text" label="Nazwa użytkownika" callback={setUserName} value={userName}/>
+               <UniversalInput name="e-mail" type="email" label="E-mail" callback={setEmail} value={email}/>
+               <UniversalInput name="password" type="password" label="Hasło" callback={setPassword} value={password}/>
+               <UniversalInput name="confirm-password" type="password" label="Powtórz hasło" callback={setConfirmPassword} value={confirmPassword}/>
 
-            <GradientButton text="Załóż konto" execute={(e) => `${console.log('test')} ${e.preventDefault()}`}/>
-         </form>
+               <GradientButton text="Załóż konto" execute={(e) => `${console.log('test')} ${e.preventDefault()}`}/>
+            </form>
+            <h3 className={s.register__box_h3}>
+               Masz już konto? <a href="#" className={s.register__box_link}>Zaloguj się</a>
+            </h3>
+            <p className={s.register__box_bottomText}><a href="#">Polityka prywatności</a> i <a href="#">Warunki świadczenia usług</a></p>
+         </div>
       </section>
    );
 }

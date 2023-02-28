@@ -3,15 +3,19 @@
 .gradientButton{
    background: linear-gradient(135deg, $top-purple 5%, $bot-orange 50%, $top-purple 95%);
    color: $white-text;
+   border: none;
    padding: 16px 0;
    font-size: 28px;
    width: 400px;
    cursor: pointer;
    border-radius: 100px;
    transition: 500ms;
-   background-size: 800px;
+   background-size: 200%;
    background-position: 0%;
    &:hover{
       background-position: 100%;
+   }
+   &:active{
+      filter: contrast(150%);
    }
 }
