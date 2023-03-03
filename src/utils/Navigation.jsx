@@ -1,4 +1,5 @@
 import { HashLink } from 'react-router-hash-link';
+import styles from './Navigation.module.scss';
 
 export default function Navigation() {
     const navigation = [
@@ -26,11 +27,11 @@ export default function Navigation() {
 
     
   return (
-    <nav>
+    <nav className={styles.style}>
         <span>GROSIK</span>
-        <ul className='navigation-bar'>
+        <ul className={styles.style}>
         {navigation.map(({ name, link, content }) => (
-            <li key={name} className='navigation-button'>
+            <li key={name} >
                 <HashLink to={link} smooth className='navigation-text'>{content}</HashLink> 
             </li>
         ))}

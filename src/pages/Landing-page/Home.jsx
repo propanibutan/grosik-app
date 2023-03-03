@@ -5,11 +5,13 @@ import About from "./About"
 import Promotions from "./Promotions"
 import Opinions from "./Opinions"
 import Contact from "./Contact"
+import styles from './Home.module.scss';
 
-export default function Home(){
+
+export default function Home({t}){
     return (
-        <div class="top-background bottom-background">
-            <Header/>
+        <div className={styles.style}>
+            <Header />
             <Hero/>
             <Steps/>
             <About />
