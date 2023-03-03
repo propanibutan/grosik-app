@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Register from './pages/Register/Register';
+import Home from './pages/Landing-page/Home';
 
 function App() {
 
   return (  
     <BrowserRouter>
       <Routes>
-        {/* <Route path='/' element={<Home />} /> */}
+        <Route path='/' element={<Home />} />
         {/* <Route path='logowanie' element={<Login />} /> */}
         <Route path='register' element={<Register />} />
         {/* <Route path='wylogowano' element={<Logout />} /> */}
