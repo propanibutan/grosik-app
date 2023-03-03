@@ -1,8 +1,12 @@
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Register from './pages/Register/Register';
+import { useTranslation, } from "react-i18next";
+
 
 function App() {
 
+    const { t } = useTranslation();
   return (  
     <BrowserRouter>
       <Routes>
@@ -17,3 +21,4 @@ function App() {
 }
 
 export default App;
+
