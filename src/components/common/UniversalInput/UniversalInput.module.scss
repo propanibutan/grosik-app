@@ -18,16 +18,21 @@
    font-weight: 400;
    transition: all 333ms;
    z-index: -1;
+   background: linear-gradient(135deg, $top-purple 10%, $bot-orange );
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
 .inputBox__label_active{
    font-size: 16px;
    top: -5%;
+
 }
 .inputBox__input{
    width: 100%;
    height: 100%;
    border: none;
-   border-bottom: 3px solid $text;
+   border-bottom: 3px solid;
+   border-color: $text;
    font-size: 26px;
    padding-left: 20px;
    background-color: transparent;
@@ -51,7 +56,7 @@
    border: none;
 }
 .inputBox__icon{
-
+   cursor: pointer;
    height: 30px;
    width: 40px;
 }
@@ -63,4 +68,10 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
+}
+:-moz-autofill, :-moz-autofill-preview {
+   filter: none;
+}
+input:autofill {
+   background: #fff; /* or any other */
 }

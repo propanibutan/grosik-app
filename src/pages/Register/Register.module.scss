@@ -3,7 +3,9 @@
 .register{
    font-family: $main-font;
    color: $main;
-   background-color: black;
+   // background-color: black;
+   background: linear-gradient(135deg, $top-purple 10%, $bot-orange );
+   @include bot-gradient();
    min-height: 100vh;
    display: flex;
    flex-direction: column;
@@ -49,7 +51,7 @@
    color: $primary-orange;
 }
 .register__box_bottomText{
-   font-size: 20px;
+   font-size: 24px;
    color: $text;
    margin-top: 65px;
    a{

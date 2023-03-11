@@ -24,23 +24,15 @@ const UniversalInput = ({name, type, label, callback, value}) => {
             type={InputType()}
             className={s.inputBox__input}
             onChange={(e) => callback(e.target.value)}
+            value={value}
+            autoComplete="off"
          />
          <label htmlFor={name} className={`${s.inputBox__label} ${value.length > 0 ? s.inputBox__label_active : ''}`}>{label}</label>
          {
             type === 'password' &&
-            <div>
-               {
-                  seePass
-                  ?
-                     <button className={s.inputBox__btn} onClick={(e) => `${e.preventDefault()} ${setSeePass(false)}`}>
-                        <img src={EyeDashed} alt="eye" className={s.inputBox__icon} />
-                     </button>
-                  : 
-                     <button className={s.inputBox__btn} onClick={(e) => `${e.preventDefault()} ${setSeePass(true)}`}>
-                        <img src={Eye} alt="eye dashed" className={s.inputBox__icon} /> 
-                     </button>
-               }
-            </div>
+            <button className={s.inputBox__btn} onClick={(e) => `${e.preventDefault()} ${setSeePass(!seePass)}`}>
+               <img src={seePass ? EyeDashed : Eye} alt="eye" className={s.inputBox__icon} />
+            </button>
          }
       </div>
    );

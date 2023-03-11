@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { auth } from "../../data/firebase_config";
+import { auth, database } from "../../data/firebase_config";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { setDoc, doc, serverTimestamp } from "firebase/firestore";
 import GradientButton from "../../components/common/GradientButton";
 import UniversalInput from "../../components/common/UniversalInput/UniversalInput";
 
@@ -15,11 +16,24 @@ const Register = () => {
 
    const SignIn = async (e) => {
       e.preventDefault();
-      await createUserWithEmailAndPassword(auth, email, password);
+      try{
+         const newUser = await createUserWithEmailAndPassword(auth, email, password);
+         sessionStorage.setItem("Login", `${auth.currentUser.email}`);
+         await setDoc(doc(database, 'users', newUser.user.uid), {
+            name: userName,
+            email: email,
+            password: password,
+            created: serverTimestamp(),
+         })
+      } catch(err) {
+         console.error(err);
+      }
+      console.log('register tests')
+      setUserName('');
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
    }
-
-   const SetSessionStorageUser = auth?.currentUser?.email !== undefined && 
-      sessionStorage.setItem("Login", `${auth.currentUser.email}`);
 
    return (
       <section className={s.register}>
@@ -31,10 +45,10 @@ const Register = () => {
                <UniversalInput name="password" type="password" label="Hasło" callback={setPassword} value={password}/>
                <UniversalInput name="confirm-password" type="password" label="Powtórz hasło" callback={setConfirmPassword} value={confirmPassword}/>
 
-               <GradientButton text="Załóż konto" execute={(e) => `${console.log('test')} ${e.preventDefault()}`}/>
+               <GradientButton text="Załóż konto" execute={(e) => SignIn(e)}/>
             </form>
             <h3 className={s.register__box_h3}>
-               Masz już konto? <a href="#" className={s.register__box_link}>Zaloguj się</a>
+               Masz już konto? <a href="/login" className={s.register__box_link}>Zaloguj się</a>
             </h3>
             <p className={s.register__box_bottomText}><a href="#">Polityka prywatności</a> i <a href="#">Warunki świadczenia usług</a></p>
          </div>

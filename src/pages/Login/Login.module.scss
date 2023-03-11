@@ -1,2 +1,39 @@
 @import "/src/scss/main.scss";
 
+.login{
+   font-family: $main-font;
+   color: $main;
+   // background-color: black;
+   background: linear-gradient(135deg, $top-purple 10%, $bot-orange );
+   @include bot-gradient();
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   &__box{
+      background-color: $primary-background;
+      min-width: 500px;
+      padding: 100px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 20px;
+      align-items: center;
+      box-shadow: 0 0 50px 4px #797979;
+      font-family: $font-text;
+   }
+   &__checkbox{
+
+   }
+   &__bottomInfo{
+      text-align: center;
+      font-size: 24px;
+      color: $text;
+      margin-top: 65px;
+      a{
+         color: $primary-orange;
+      }
+   }
+}
