@@ -10,15 +10,27 @@ const Login = () => {
 
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
+   const [error, setError] = useState(false);
+   const [keepSignIn, setKeepSignIn] = useState(false);
 
    const HandleSignIn = async (e) => {
-      await signInWithEmailAndPassword(auth, email, password);
-      console.log('handle sign in');
-      sessionStorage.setItem("Login", `${auth.currentUser.email}`);
-   }
+      try{
+         await signInWithEmailAndPassword(auth, email, password);
+         keepSignIn
+         ? localStorage.setItem("Login", `${auth.currentUser.email}`)
+         : sessionStorage.setItem("Login", `${auth.currentUser.email}`)
+      } catch(err) {
+         console.log('Error found:', err);
+         setError(true);
+         return;
+      }
 
+      setError(false);
+   }
+   console.log(keepSignIn);
    return (
       <section className={s.login}>
+         <h1 className={s.login__title}>Zaloguj się</h1>
          <div className={s.login__box}>
             <UniversalInput 
                name="email" 
@@ -35,9 +47,13 @@ const Login = () => {
                value={password}
             />
             <label className={s.login__checkbox}>
-               <input type="checkbox" />
+               <input type="checkbox" onChange={() => setKeepSignIn(!keepSignIn)}/>
                Nie wylogowuj mnie
             </label>
+            {
+               error &&
+               <p className={s.error}>E-mail lub hasło nie jest poprawne!</p>
+            }
             <GradientButton text="Zaloguj" execute={(e) => `${HandleSignIn()} ${e.preventDefault()}`}/>
             <div className={s.login__bottomInfo}>
                <h3>Nie masz jeszcze konta?</h3>

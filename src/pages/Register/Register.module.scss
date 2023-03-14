@@ -3,7 +3,6 @@
 .register{
    font-family: $main-font;
    color: $main;
-   // background-color: black;
    background: linear-gradient(135deg, $top-purple 10%, $bot-orange );
    @include bot-gradient();
    min-height: 100vh;
@@ -56,5 +55,47 @@
    margin-top: 65px;
    a{
       color: $primary-orange;
+   }
+}
+.error{
+   font-family: $font-alt;
+   color: red;
+   font-size: 18px;
+   font-weight: 700;
+}
+
+
+@media screen and (max-width: 800px) {
+   .register{
+      padding: 32px 16px;
+   }
+   .register__title{
+      font-size: 44px;
+      line-height: 55px;
+      text-align: center;
+      margin-bottom: 40px;
+   }
+   .register__box{
+      min-width: max-content;
+      max-width: 500px;
+      width: 100%;
+      padding: 32px 16px;
+   }
+   .register__box_h3{
+      max-width: 80%;
+      text-align: center;
+      font-size: 18px;
+      line-height: 28px;
+   }
+   .register__box_bottomText{
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   .error{
+      font-size: 14px;
+      max-width: 80%;
+      text-align: center;
    }
 }

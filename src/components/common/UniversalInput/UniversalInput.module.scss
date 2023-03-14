@@ -62,6 +62,29 @@
 }
 
 
+@media screen and (max-width: 800px) {
+   .inputBox{
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+   }
+   .inputBox__input{
+      font-size: 18px;
+      padding-left: 10px;
+      border-bottom: 2px solid;
+   }
+   .inputBox__label{
+      font-size: 18px;
+      top: 50%;
+      left: 10px;
+   }
+   .inputBox__icon{
+      cursor: pointer;
+      height: 25px;
+      width: 35px;
+   }
+}
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

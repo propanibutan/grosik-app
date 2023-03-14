@@ -13,6 +13,7 @@ const Register = () => {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [confirmPassword, setConfirmPassword] = useState('');
+   const [errorMsg, setErrorMsg] = useState(false);
 
    const SignIn = async (e) => {
       e.preventDefault();
@@ -26,9 +27,14 @@ const Register = () => {
             created: serverTimestamp(),
          })
       } catch(err) {
-         console.error(err);
+         console.log('Error found:', err);
+         setErrorMsg(true);
+         console.log(errorMsg)
+         return;
       }
-      console.log('register tests')
+      console.log(errorMsg)
+      setErrorMsg(false);
+      console.log('Register succesull');
       setUserName('');
       setEmail('');
       setPassword('');
@@ -44,7 +50,10 @@ const Register = () => {
                <UniversalInput name="e-mail" type="email" label="E-mail" callback={setEmail} value={email}/>
                <UniversalInput name="password" type="password" label="Hasło" callback={setPassword} value={password}/>
                <UniversalInput name="confirm-password" type="password" label="Powtórz hasło" callback={setConfirmPassword} value={confirmPassword}/>
-
+               {
+                  errorMsg &&
+                  <p className={s.error}>E-mail jest już w użytku!</p>
+               }
                <GradientButton text="Załóż konto" execute={(e) => SignIn(e)}/>
             </form>
             <h3 className={s.register__box_h3}>
