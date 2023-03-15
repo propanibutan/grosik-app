@@ -7,6 +7,8 @@ import UniversalInput from "../../components/common/UniversalInput/UniversalInpu
 
 import s from "./Register.module.scss";
 
+
+
 const Register = () => {
 
    const [userName, setUserName] = useState('');
