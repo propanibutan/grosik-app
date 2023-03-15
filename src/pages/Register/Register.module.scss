@@ -63,6 +63,10 @@
    font-size: 18px;
    font-weight: 700;
 }
+.success{
+   @extend .error;
+   color: green;
+}
 
 
 @media screen and (max-width: 800px) {
@@ -97,5 +101,9 @@
       font-size: 14px;
       max-width: 80%;
       text-align: center;
+   }
+   .success{
+      @extend .error;
+      color: green;
    }
 }
