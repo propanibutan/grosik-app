@@ -14,9 +14,11 @@ const Register = () => {
    const [password, setPassword] = useState('');
    const [confirmPassword, setConfirmPassword] = useState('');
    const [errorMsg, setErrorMsg] = useState(false);
+   const [successMsg, setSuccessMsg] = useState(false);
 
    const SignIn = async (e) => {
       e.preventDefault();
+      setSuccessMsg(false);
       try{
          const newUser = await createUserWithEmailAndPassword(auth, email, password);
          sessionStorage.setItem("Login", `${auth.currentUser.email}`);
@@ -34,6 +36,7 @@ const Register = () => {
       }
       console.log(errorMsg)
       setErrorMsg(false);
+      setSuccessMsg(true);
       console.log('Register succesull');
       setUserName('');
       setEmail('');
@@ -51,8 +54,10 @@ const Register = () => {
                <UniversalInput name="password" type="password" label="Hasło" callback={setPassword} value={password}/>
                <UniversalInput name="confirm-password" type="password" label="Powtórz hasło" callback={setConfirmPassword} value={confirmPassword}/>
                {
-                  errorMsg &&
-                  <p className={s.error}>E-mail jest już w użytku!</p>
+                  errorMsg && <p className={s.error}>E-mail jest już w użytku!</p>
+               }
+               {
+                  successMsg && <p className={s.success}>Konto założone pomyślnie!</p>
                }
                <GradientButton text="Załóż konto" execute={(e) => SignIn(e)}/>
             </form>
