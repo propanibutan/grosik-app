@@ -1,5 +1,7 @@
 import { HashLink } from 'react-router-hash-link';
-import styles from './Navigation.module.scss';
+import s from './Navigation.module.scss';
+import LoginNavButton from "../../../components/common/LoginNavButton"
+import LanguageSwitch from "../../../components/common/LanguageSwitch"
 
 export default function Navigation() {
     const navigation = [
@@ -27,17 +29,17 @@ export default function Navigation() {
 
     
   return (
-    <nav className={styles.style}>
-        <span>GROSIK</span>
-        <ul className={styles.style}>
+    <nav className={s.container}>
+        <a href='/home' className={s.logo}><img src="\icon.svg" className={s.logo__icon}/>GROSIK APP</a>
+        <ul className={s.nav_bar}>
         {navigation.map(({ name, link, content }) => (
             <li key={name} >
-                <HashLink to={link} smooth className='navigation-text'>{content}</HashLink> 
+                <HashLink to={link} smooth className={s.nav_bar__link}>{content}</HashLink> 
             </li>
         ))}
         </ul>
-        <button>ZALOGUJ SIĘ</button>
-                      
+        <LoginNavButton />
+        <LanguageSwitch />    
     </nav>
   )
 }
