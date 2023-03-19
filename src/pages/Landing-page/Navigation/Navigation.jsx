@@ -1,7 +1,7 @@
 import { HashLink } from 'react-router-hash-link';
 import s from './Navigation.module.scss';
 import LoginNavButton from "../../../components/common/LoginNavButton"
-import LanguageSwitch from "../../../components/common/LanguageSwitch"
+import LanguageSwitch from "../../../components/common/LanguageDrop"
 
 export default function Navigation() {
     const navigation = [
