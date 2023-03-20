@@ -3,7 +3,7 @@
 .header {
     font-family: $font-text;
     color: $main;
-    min-height: 100vh;
+    min-height: 50vw;
     width: 100vw;
     background: transparent url("/src/assets/top-background.png") 50% 100% no-repeat;
     position: relative;
@@ -81,3 +81,11 @@
 .hidden {
     display: none;
   }
+
+@media screen and (max-width: 800px) { 
+    .moving_bg {
+        &__img7 {
+            display: none;
+        }
+    }
+}
