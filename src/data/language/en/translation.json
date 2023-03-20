@@ -1,5 +1,8 @@
 
 {
   "nav_app": "About application",
-  "nav_promo": "Sale"
+  "nav_promo": "Sale",
+  "nav_opinions": "Opinions",
+  "nav_contact": "Contact",
+  "nav_login": "Login"
 }

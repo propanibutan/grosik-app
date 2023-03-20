@@ -1,13 +1,20 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect  } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import { BsGlobeAmericas } from 'react-icons/bs'
-import { IoCaretDownOutline, IoCaretUpOutline } from 'react-icons/io5'
+import { IoCaretDownOutline, IoCaretUpOutline } from 'react-icons/io5';
 import s from './LanguageDrop.module.scss';
+import i18n from "i18next";
+import { useCookies } from "react-cookie";
 
 export default function LanguageDrop() {
+  //lang state
   const [lang, setLang] = useState('pl')
-  const [focus, setFocus] = useState(false)
+  const [cookies, setCookie] = useCookies();
+  //drop state
+  const [open, setOpen] = useState(false)
+  const nodeRef = useRef(null);
 
-
+  //lang settings
   const languages = [ 
     {
       country: 'pl'
@@ -16,35 +23,60 @@ export default function LanguageDrop() {
       country: 'en'
     }
   ]
-  
-  const onClickHandler = (e) => {
-    const isDropdownButton = e.target.matches("data-dropdown-button")
-    if (!isDropdownButton && e.target.closest('[data-dropdown]') != null) return
-    if(isDropdownButton) {
-      const dropdown = e.target.closest('[data-dropdown]')
-      dropdown.className.toggle('active')
-    }
 
+  useEffect(()=> {
+    if (cookies.i18next === 'pl') {
+        setLang('pl')
+    } else {
+        setLang('en') 
+    }
+  }, [cookies.i18next])
+
+  const handleLang = (country) => {
+    languageSet(country);
+    setLang(country);
+    setOpen(!open);
   }
 
+  const languageSet = (country) => {
+    if (country === 'pl'){
+      i18n.changeLanguage('pl')
+      setCookie()
+    } else if (country === 'en'){
+      i18n.changeLanguage('en') 
+      setCookie()
+    }
+  }
+
+  //drop handle
+  const handleOpen = () => {
+    setOpen(!open);
+  }
+ 
   return (
-    <div data-dropdown className={s.container}>
-      <button data-dropdown-button className={s.lang_menu} onFocus={() => setFocus(true)}  onClick={(e) => onClickHandler(e)}>
+    <div className={s.container}>
+      <button className={s.lang_menu}  onClick={handleOpen}>
         <BsGlobeAmericas className={s.world_icon}/>
         <div className={s.selected_lang}>{lang}</div>
-        {!focus ? <IoCaretDownOutline /> : <IoCaretUpOutline />}
+        {!open ? <IoCaretDownOutline /> : <IoCaretUpOutline />}
       </button>
-      
-      <ul className={s.list}>
-         {languages.map(({country}, i) => (
-          <li key={i} className={s.element}>
-            <a href="" className={s.thing}>
-              {country}
-            </a>
-          </li>
-         ))}
-      </ul>
-      
+      <CSSTransition 
+        nodeRef={nodeRef} 
+        in={open} 
+        timeout={200} 
+        classNames={{...s}}
+        unmountOnExit
+      >
+        <ul ref={nodeRef} className={s.list}>
+          {languages.map(({country}, i) => (
+            <li key={i} className={s.element}>
+              <button className={s.thing} onClick={() => handleLang(country)}>
+                {country}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </CSSTransition>
     </div>
   )
 }

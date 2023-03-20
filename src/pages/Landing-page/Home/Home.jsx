@@ -12,7 +12,7 @@ import Navigation from '../Navigation/Navigation'
 export default function Home({t}){
     return (
         <div className={styles.style}>
-            <Navigation />
+            <Navigation t={t} />
             <Header />
             <Hero/>
             <Steps/>

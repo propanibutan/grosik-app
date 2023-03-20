@@ -3,27 +3,27 @@ import s from './Navigation.module.scss';
 import LoginNavButton from "../../../components/common/LoginNavButton"
 import LanguageSwitch from "../../../components/common/LanguageDrop"
 
-export default function Navigation() {
+export default function Navigation({t}) {
     const navigation = [
         {
             name: 'about',
             link: '/#about',
-            content: 'O aplikacji'
+            content: `${t('nav_app')}`
         },
         {
             name: 'promotions',
             link: '/#promotions',
-            content: 'Promocje'
+            content: `${t('nav_promo')}`
         },
         {
-            name: 'Opinions',
+            name: 'opinions',
             link: '/#opinions',
-            content: 'Opinie'
+            content: `${t('nav_opinions')}`
         },
         {
             name: 'contact',
             link: '/#contact',
-            content: 'Kontakt'
+            content: `${t('nav_contact')}`
         },
     ]
 
@@ -38,8 +38,8 @@ export default function Navigation() {
             </li>
         ))}
         </ul>
-        <LoginNavButton />
-        <LanguageSwitch />    
+        <LoginNavButton t={t} />
+        <LanguageSwitch t={t}/>    
     </nav>
   )
 }
