@@ -155,11 +155,12 @@ This is an example of how to list things you need to use the software and how to
 
 - [X] Basic configuration
 - [X] Database
-- [ ] Landing page
-- [ ] Authentication
-    - [ ] Login
-    - [ ] Registration
-    - [ ] Logout
+- [ ] Landing page (in progress)
+- [ ] API (in progress)
+- [X] Authentication
+    - [X] Login
+    - [X] Registration
+    - [X] Logout
 - [ ] Application page
     - [ ] A buy list with login
     - [ ] A buy list without login
