@@ -100,6 +100,10 @@ This is an application where everyone can create their shopping list and compare
 * [![Firebase][Firebase]][Firebase-url]
 * [![Vite][Vite]][Vite-url]
 * [![i18next][i18next]][i18next-url]
+* [![Node][Node.js]][Node-url]
+* [![MongoDB][MongoDB]][Mongodb-url]
+* [![Express][Express]][Express-url]
+* [![Mongoose][Mongoose.js]][Mongoose-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -155,11 +159,12 @@ This is an example of how to list things you need to use the software and how to
 
 - [X] Basic configuration
 - [X] Database
-- [ ] Landing page
-- [ ] Authentication
-    - [ ] Login
-    - [ ] Registration
-    - [ ] Logout
+- [ ] Landing page (in progress)
+- [ ] API (in progress)
+- [X] Authentication
+    - [X] Login
+    - [X] Registration
+    - [X] Logout
 - [ ] Application page
     - [ ] A buy list with login
     - [ ] A buy list without login
@@ -239,3 +244,11 @@ Project Link: [https://github.com/propanibutan/grosik-app](https://github.com/pr
 [Trello-url]: https://www.trello.com/
 [Discord]: https://img.shields.io/badge/discord-5865F2?style=for-the-badge&logo=discord&logoColor=FFFFFF
 [Discord-url]: https://discord.com/
+[Node.js]: https://img.shields.io/badge/node.js-333333?style=for-the-badge&logo=nodedotjs&logoColor=339933
+[Node-url]: https://nodejs.org/en
+[MongoDB]: https://img.shields.io/badge/mongodb-47A248?style=for-the-badge&logo=mongodb&logoColor=001E2B
+[Mongodb-url]: https://www.mongodb.com/
+[Mongoose.js]: https://img.shields.io/badge/mongoose-D6D6D6?style=for-the-badge&logo=mongoose&logoColor=880000
+[Mongoose-url]: https://mongoosejs.com/
+[Express]: https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=FFFFFFF
+[Express-url]: https://expressjs.com/
