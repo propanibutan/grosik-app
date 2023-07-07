@@ -28,9 +28,16 @@ app.use("/compare", compareRoute);
 app.use("/lists", listsRoute);
 app.use("/users", usersRoute);
 
-app.use((req, res, next)=>{
-  console.log("middleware")
-})
+app.use((err, req, res, next) => {
+  const errorStatus = err.status || 500;
+  const errorMessage = err.message || "Something went wrong!";
+  return res.status(errorStatus).json({
+    success: false,
+    status: errorStatus,
+    message: errorMessage,
+    stack: err.stack
+  });
+});
 
 app.listen(8800, () => {
   connect();
