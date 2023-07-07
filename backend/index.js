@@ -28,6 +28,10 @@ app.use("/compare", compareRoute);
 app.use("/lists", listsRoute);
 app.use("/users", usersRoute);
 
+app.use((req, res, next)=>{
+  console.log("middleware")
+})
+
 app.listen(8800, () => {
   connect();
   console.log("Connected to backend");

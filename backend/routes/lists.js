@@ -50,7 +50,9 @@ router.get("/:id", async (req, res) => {
 });
 
 //GET ALL
-router.get("/", async (req, res) => {
+router.get("/", async (req, res, next) => {
+  console.log("lists")
+  next()
   try {
     const allLists = await List.find(req.params.id);
     res.status(200).json(allLists);
