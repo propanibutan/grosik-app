@@ -1,22 +1,11 @@
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
-    userId: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'User'
-      },
-    name: {
+  userId: {
     type: String,
     required: true,
+    unique: true,
   },
-  logo: {
-    type: String,
-    required: true,
-  },
-  products: {
-    type: [String],
-  },
-});
+}, {timestamps: true});
 
-export default mongoose.model("Company", CompanySchema)
+export default mongoose.model("User", UserSchema);

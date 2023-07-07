@@ -14,8 +14,8 @@ export default function Home({t}){
         <div className={styles.style}>
             <Navigation t={t} />
             <Header />
-            <Hero/>
-            <Steps/>
+            <Hero />
+            <Steps />
             <About />
             <Promotions />
             <Opinions />

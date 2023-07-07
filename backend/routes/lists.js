@@ -1,62 +1,27 @@
 import express from "express";
-import List from "../models/List.js";
+import {
+  createList,
+  deleteList,
+  getAllLists,
+  getList,
+  updateList,
+} from "../controllers/list.js";
 
 const router = express.Router();
 
 //CREATE
-router.post("/", async (req, res) => {
-  const newList = new List(req.body);
-
-  try {
-    const savedList = await newList.save();
-    res.status(200).json(savedList);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+router.post("/", createList);
 
 //UPDATE
-router.put("/:id", async (req, res) => {
-  try {
-    const updatedList = await List.findByIdAndUpdate(
-      req.params.id,
-      { $set: req.body },
-      { new: true }
-    );
-    res.status(200).json(updatedList);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+router.put("/:id", updateList);
 
 //DELETE
-router.delete("/:id", async (req, res) => {
-  try {
-    await List.findByIdAndDelete(req.params.id);
-    res.status(200).json("List has been deleted.");
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+router.delete("/:id", deleteList);
 
 //GET
-router.get("/:id", async (req, res) => {
-  try {
-    const list = await List.findById(req.params.id);
-    res.status(200).json(list);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+router.get("/:id", getList);
 
 //GET ALL
-router.get("/", async (req, res, next) => {
-  try {
-    const allLists = await List.find();
-    res.status(200).json(allLists);
-  } catch (err) {
-    next(err);
-  }
-});
+router.get("/", getAllLists);
 
 export default router;
