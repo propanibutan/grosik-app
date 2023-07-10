@@ -1,11 +1,12 @@
 import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema({
-  userId: {
+  email: {
     type: String,
     required: true,
     unique: true,
   },
+  lists: Array
 }, {timestamps: true});
 
 export default mongoose.model("User", UserSchema);
