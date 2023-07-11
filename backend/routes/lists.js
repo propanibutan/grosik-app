@@ -10,7 +10,7 @@ import {
 const router = express.Router();
 
 //CREATE
-router.post("/", createList);
+router.post("/create", createList);
 
 //UPDATE
 router.put("/:id", updateList);

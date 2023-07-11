@@ -6,7 +6,6 @@ import {
   getProduct,
   updateProduct,
 } from "../controllers/product.js";
-import { createProduct } from "../controllers/product.js";
 
 const router = express.Router();
 

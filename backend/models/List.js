@@ -2,10 +2,10 @@ import mongoose from "mongoose";
 
 const ListSchema = new mongoose.Schema(
   {
-    id: {
-      type: Number,
-      required: true,
-    },
+    // id: {
+    //   type: Number,
+    //   required: true,
+    // },
     name: {
       type: String,
       required: true,

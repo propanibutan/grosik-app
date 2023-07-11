@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import compareRoute from "./routes/compare.js";
 import listsRoute from "./routes/lists.js";
 import usersRoute from "./routes/users.js";
+import productsRoute from "./routes/product.js"
 
 const app = express();
 dotenv.config();
@@ -25,8 +26,9 @@ mongoose.connection.on("disconnected", () => {
 app.use(express.json());
 
 app.use("/compare", compareRoute);
-app.use("/lists", listsRoute);
+app.use("/pulpit", listsRoute);
 app.use("/users", usersRoute);
+app.use("/products", productsRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
