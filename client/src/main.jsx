@@ -2,30 +2,34 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import i18n from "i18next";
-import {initReactI18next} from "react-i18next";
+import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import HttpApi from "i18next-http-backend";
 
+//backend
+import { QueryClient, QueryClientProvider } from "react-query";
+const queryClient = new QueryClient();
 
 i18n
-    .use(initReactI18next)
-    .use(LanguageDetector)
-    .use(HttpApi)
-    .init({
-        supportedLngs: ['en', 'pl'],
-        fallbackLng: "en",
-        detection: {
-            order: ['cookie', 'htmlTag', 'localStorage', 'path', 'subdomain'],
-            caches: ['cookie'],
-        },
-        backend: {
-            loadPath: '/src/data/language/{{lng}}/translation.json',
-        }
-    });
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .use(HttpApi)
+  .init({
+    supportedLngs: ["en", "pl"],
+    fallbackLng: "en",
+    detection: {
+      order: ["cookie", "htmlTag", "localStorage", "path", "subdomain"],
+      caches: ["cookie"],
+    },
+    backend: {
+      loadPath: "/src/data/language/{{lng}}/translation.json",
+    },
+  });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
   </React.StrictMode>
 );
-
