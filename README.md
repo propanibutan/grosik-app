@@ -93,16 +93,16 @@ This is an application where everyone can create their shopping list and compare
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+### MERN App Built With
 
+* [![MongoDB][MongoDB]][Mongodb-url]
+* [![Express][Express]][Express-url]
 * [![React][React.js]][React-url]
+* [![Node][Node.js]][Node-url]
 * [![Sass][Sass]][Sass-url]
 * [![Firebase][Firebase]][Firebase-url]
 * [![Vite][Vite]][Vite-url]
 * [![i18next][i18next]][i18next-url]
-* [![Node][Node.js]][Node-url]
-* [![MongoDB][MongoDB]][Mongodb-url]
-* [![Express][Express]][Express-url]
 * [![Mongoose][Mongoose.js]][Mongoose-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
