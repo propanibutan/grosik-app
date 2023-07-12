@@ -2,20 +2,20 @@ import mongoose from "mongoose";
 
 const ListSchema = new mongoose.Schema(
   {
-    // id: {
-    //   type: Number,
-    //   required: true,
-    // },
     name: {
       type: String,
       required: true,
+      unique: true
     },
     products: {
       type: Array,
     },
-    pricesSum: {
-      type: Number,
+    savedPrices: {
+      type: Array,
     },
+    favProducts: {
+      type: Array,
+    }
   },
   { timestamps: true }
 );
